@@ -25,6 +25,8 @@ class PopoverTooltip extends React.Component {
       isModalOpen: false,
       x: 0,
       y: 0,
+      xOffset: props.xOffset,
+      yOffset: props.yOffset,
       width: 0,
       height: 0,
       opacity: new Animated.Value(0),
@@ -190,7 +192,7 @@ class PopoverTooltip extends React.Component {
               </Animated.View>
             </TouchableOpacity>
           </Animated.View>
-          <Animated.View style={[{position:'absolute', left:this.state.x, top:this.state.y, width:this.state.width, height:this.state.height, backgroundColor:'transparent', opacity:1}, {transform: [{scale: this.state.button_component_container_scale}]}]}>
+          <Animated.View style={[{position:'absolute', left:this.state.x+this.state.xOffset, top:this.state.y+this.state.yOffset, width:this.state.width, height:this.state.height, backgroundColor:'transparent', opacity:1}, {transform: [{scale: this.state.button_component_container_scale}]}]}>
             <TouchableOpacity
               onPress={this.toggle.bind(this)}
               activeOpacity={1.0}
