@@ -140,11 +140,11 @@ class PopoverTooltip extends React.Component {
                         }
                         let tooltip_container_x = this.state.tooltip_container_scale.interpolate({
                           inputRange: [0, 1],
-                          outputRange: [tooltip_container_x_final, tooltip_container_x_final]
+                          outputRange: [tooltip_container_x_final, tooltip_container_x_final + this.state.xOffset]
                         });
                         let tooltip_container_y = this.state.tooltip_container_scale.interpolate({
                           inputRange: [0, 1],
-                          outputRange: [tooltip_container_y_final+tooltip_container_height/2+20, tooltip_container_y_final]
+                          outputRange: [tooltip_container_y_final+tooltip_container_height/2+20, tooltip_container_y_final + this.state.yOffset]
                         });
                         let button_component_container_scale = this.state.tooltip_container_scale.interpolate({
                           inputRange: [0, 1],
